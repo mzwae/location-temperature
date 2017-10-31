@@ -1,0 +1,19 @@
+{
+  "name": "postcode-temperature",
+  "version": "1.0.0",
+  "description": "An express application to get temperature of your post code",
+  "main": "app.js",
+  "scripts": {
+    "test": "node mocha",
+    "start": "node app.js"
+  },
+  "author": "MZ",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "forecastio": "^1.0.2",
+    "zippity-do-dah": "0.0.3"
+  }
+}
