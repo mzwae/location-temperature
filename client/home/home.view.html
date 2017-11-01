@@ -1,0 +1,21 @@
+<input ng-click="vm.getLocation()" type="button" value="Find my location temperature" class="btn btn-success" ng-show="vm.buttonStatus">
+<br><br>
+<div ng-show="vm.showErrorMsg">
+  <p>{{vm.ErrorMsg}}</p>
+</div>
+<div ng-show="vm.displayResults">
+  <div class="well">Your location coordinates (latitude, longitude) are: {{vm.lat}}, {{vm.long}} </div>
+  <div class="well">Your timezone is: {{vm.timezone}} </div>
+  <div class="well">Temperature in your location is currently: {{vm.temperature}}&#176C</div>
+
+  <div class="col-xs-12 location-map">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h2 class="panel-title">Your Location Map</h2>
+      </div>
+      <div class="panel-body">
+        <img ng-src="http://maps.googleapis.com/maps/api/staticmap?key={{vm.googleMapKey}}={{vm.lat}},{{ vm.long}}&amp;zoom=17&amp;size=600x600&amp;sensor=false&amp;markers={{vm.lat}},{{vm.long}}&amp;scale=2" class="img-responsive img-rounded">
+      </div>
+    </div>
+  </div>
+</div>
