@@ -1,8 +1,6 @@
 require('dotenv').load();
 var path = require('path');
 var express = require('express');
-var router = express.Router();
-var zipdb = require('zippity-do-dah');
 var ForecastIo = require('forecastio');
 var logger = require('morgan');
 var bodyparser = require('body-parser');
@@ -19,7 +17,11 @@ app.use(bodyparser.urlencoded({
 
 app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(express.static(path.resolve(__dirname, 'client')));
-app.set('views', path.resolve(__dirname, 'client', 'index.html'));
+//app.set('views', path.resolve(__dirname, 'client', 'index.html'));
+app.set('views', path.resolve(__dirname, 'client'));
+app.get('/', function(req, res){
+  res.render('index');
+});
 
 
 app.post('/api/v1/geodata', function (req, res, next) {
